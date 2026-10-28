@@ -1,0 +1,18 @@
+/* QR Extractor tab (+ progress/status pieces shared with the Clean tab). Uses the design tokens from app.css. */
+#qrTab .qr-card { margin-top:14px; }
+#qrTab .qr-card:first-child { margin-top:0; }
+.qr-bar { height:6px; border-radius:var(--r-full); background:var(--card3); overflow:hidden; }
+.qr-bar i { display:block; height:100%; width:0; border-radius:var(--r-full); background:var(--accent); transition:width .25s linear; }
+.qr-prog { margin:10px 0 2px; font-size:13.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.qr-status { min-height:20px; margin-top:8px; font-size:14px; color:var(--muted); line-height:1.45; }
+.qr-status:empty { display:none; }
+.qr-status.ok { color:var(--ok); font-weight:600; }
+.qr-status.err { color:var(--danger); font-weight:600; }
+.qr-empty { margin:22px 0 10px; padding:26px 12px; text-align:center; color:var(--muted); border-radius:var(--r-lg); background:var(--card2);; }
+.qr-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px; margin-top:14px; }
+.qr-item { display:flex; flex-direction:column; gap:10px; padding:12px; background:var(--card2); border-radius:var(--r-lg); min-width:0; }
+.qr-item img { width:100%; aspect-ratio:1; object-fit:contain; background:#fff; border-radius:var(--r-md); padding:6px; image-rendering:pixelated; box-shadow:0 0 0 .5px rgb(0 0 0 / .15); }
+.qr-cap { font-size:12.5px; color:var(--muted); overflow-wrap:anywhere; }
+#qrCount { font-size:17px; font-weight:750; }
+@media (max-width:800px) { .qr-grid { grid-template-columns:repeat(2,1fr); } }
+#qrTab label.inl, #clTab label.inl { white-space:normal; align-items:flex-start; }
